@@ -1,0 +1,61 @@
+# SmartLIB-JAIN Email Configuration
+
+Configure your **EmailJS** dashboard with these two primary templates.
+
+---
+
+## 1. Account Approved / Registration
+**Template ID:** `template_8kko542`
+**Subject:** `Welcome to SmartLIB JAIN - Account Approved`
+
+```html
+<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e7ff; border-radius: 16px; overflow: hidden; background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+  <div style="background-color: #6366f1; padding: 40px; text-align: center;">
+    <h1 style="color: #ffffff; margin: 0; font-size: 24px; font-weight: 800; letter-spacing: 1px;">SmartLIB JAIN</h1>
+  </div>
+  <div style="padding: 40px; color: #1e293b; line-height: 1.6; text-align: center;">
+    <h2 style="margin-top: 0;">Welcome, {{student_name}}!</h2>
+    <p>Your library account has been verified and approved.</p>
+    <p style="margin: 30px 0;">
+      <a href="#" style="background-color: #6366f1; color: #ffffff; padding: 14px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; display: inline-block;">Access Dashboard</a>
+    </p>
+    <p style="font-size: 14px; color: #64748b;">Verified Email: {{student_email}}</p>
+  </div>
+</div>
+```
+
+---
+
+## 2. Circulation Alert (Merged)
+**Template ID:** `template_f62uit1`
+**Subject:** `{{alert_type}}: {{book_title}}`
+
+> [!NOTE]
+> This template handles **Due Reminders**, **Overdue Alerts**, and **Book Acquisitions**.
+
+```html
+<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px; overflow: hidden; background-color: #ffffff;">
+  <div style="background-color: #4f46e5; padding: 30px; text-align: center;">
+    <h1 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: 800; text-transform: uppercase;">{{alert_type}}</h1>
+  </div>
+  <div style="padding: 40px; color: #1e293b; line-height: 1.6;">
+    <h2 style="margin-top: 0;">Hello, {{student_name}}!</h2>
+    <p>{{message}}</p>
+    <div style="background-color: #f8fafc; border-radius: 12px; padding: 24px; margin: 25px 0; border-left: 4px solid #4f46e5;">
+      <p style="margin: 0; font-size: 18px; font-weight: 700;">{{book_title}}</p>
+      <table style="width: 100%; margin-top: 15px;">
+        <tr>
+          <td>
+            <p style="margin: 0; font-size: 12px; color: #64748b;">DUE DATE</p>
+            <p style="margin: 2px 0; font-weight: 700;">{{due_date}}</p>
+          </td>
+          <td style="text-align: right;">
+            <p style="margin: 0; font-size: 12px; color: #64748b;">LATE FINE</p>
+            <p style="margin: 2px 0; font-weight: 900; color: #ef4444; font-size: 18px;">₹{{fine_amount}}</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+```
